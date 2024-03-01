@@ -1,1 +1,2 @@
-# wkd12345.github.io
+
+This is the repository for DiffPrompt's demo page.
