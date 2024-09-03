@@ -1,1 +1,1 @@
-## This is the repository for DiffPrompt's demo page.
+## This is the repository for PromptLDM's demo page.
