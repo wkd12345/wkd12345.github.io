@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="DiffPrompt: Text-Guided Controllable TTS with Diffusion Model">
+        content="PromptLDM: Prompt Guided Latent Diffusion Model for Controllable Text-to-Speech">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DiffPrompt</title>
+  <title>PromptLDM</title>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L7749G0HJZ"></script>
@@ -41,7 +41,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DiffPrompt: Text-Guided Controllable TTS with Diffusion Model</h1>
+          <h1 class="title is-1 publication-title">PromptLDM: Prompt Guided Latent Diffusion Model for Controllable Text-to-Speech</h1>
           <div class="is-size-5 publication-authors">
           </div>
 
@@ -78,9 +78,7 @@
           <p>
           </p>
           <p>
-          </p>
-          <p>
-
+            Although current speech synthesis systems are capable of synthesizing high-fidelity speech, it remains challenging to generate speech with desired styles. In this paper, we propose PromptLDM, a novel controllable Text-to-Speech (TTS) system with latent diffusion model, utilizing natural language descriptions as style prompts to guide the speech synthesis. Specifically, Considering the lack of acoustic details specific to audio prompt in text prompt representation, we introduce a latent diffusion model to establish an intermodal relationship between text and audio prompts. We optimize representations from different modalities through representation learning and fuse them to obtain a better style embedding. We use FastSpeech2 as the basic model and integrate the diffusion model to enhance its synthesis performance. Experiments indicate that our system can synthesize more natural speech with specific styles compared to the baseline.
           </p>
         </div>
 
@@ -97,7 +95,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column">
-          <h2 class="title is-3">1. EXPRESSO Samples</h2>
+          <h2 class="title is-3">Audio Samples</h2>
         </div>
       </div>
       <div class="columns is-centered has-text-centered  is-full-width">
@@ -112,54 +110,90 @@
               <th align="center"><strong>PromptTTS</strong></th>
               <th align="center"><strong>M1</strong></th>
               <th align="center"><strong>M2</strong></th>
-              <th align="center"><strong>DiffPrompt</strong></th>
+              <th align="center"><strong>M3</strong></th>
+              <th align="center"><strong>PromptLDM</strong></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td width="25%" style="text-align: center;"><p>That's that's a big difference for me.</p></td>
-              <td width="25%" style="text-align: center;"><p>He spoke with a mixture of uncertainty.</p></td>
+              <td width="30%" style="text-align: center;"><p>That's that's a big difference for me.</p></td>
+              <td width="30%" style="text-align: center;"><p>He spoke with a mixture of uncertainty.</p></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex01_confused_00099.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex01_confused_00099.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex01_confused_00099.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex01_confused_00099.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/diffprompt/ex01_confused_00099.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M3/ex01_confused_00099.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/promptldm/ex01_confused_00099.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td width="25%" style="text-align: center;"><p>Officer Chenowith? Yes, it's Jana Hawkes.</p></td>
-              <td width="25%" style="text-align: center;"><p>His voice carried no distinct inflection or emphasis.</p></td>
+              <td width="30%" style="text-align: center;"><p>Officer Chenowith? Yes, it's Jana Hawkes.</p></td>
+              <td width="30%" style="text-align: center;"><p>His voice carried no distinct inflection or emphasis.</p></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex01_default_00019.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex01_default_00019.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex01_default_00019.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex01_default_00019.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/diffprompt/ex01_default_00019.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M3/ex01_default_00019.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/promptldm/ex01_default_00019.wav" type="audio/wav"></audio></td>
             </tr>
             <tr>
-              <td width="25%" style="text-align: center;"><p>Yeah, that's a classic now!</p></td>
-              <td width="25%" style="text-align: center;"><p>Her voice was a mere whisper.</p></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex02_whisper_00092.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex02_whisper_00092.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex02_whisper_00092.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex02_whisper_00092.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/diffprompt/ex02_whisper_00092.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-              <td width="25%" style="text-align: center;"><p>Are you shy about strutting your stuff?</p></td>
-              <td width="25%" style="text-align: center;"><p>The man's voice resonated with raw emotion and sadness.</p></td>
+              <td width="30%" style="text-align: center;"><p>Are you shy about strutting your stuff?</p></td>
+              <td width="30%" style="text-align: center;"><p>The man's voice resonated with raw emotion and sadness.</p></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex03_sad_00052.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex03_sad_00052.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex03_sad_00052.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex03_sad_00052.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/diffprompt/ex03_sad_00052.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M3/ex03_sad_00052.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/promptldm/ex03_sad_00052.wav" type="audio/wav"></audio></td>
             </tr>            
             <tr>
-              <td width="25%" style="text-align: center;"><p>&lt;laugh&gt; What do you think post conveys.</p></td>
-              <td width="25%" style="text-align: center;"><p>The woman's words were accompanied by endless laughter.</p></td>
+              <td width="30%" style="text-align: center;"><p>&lt;laugh&gt; What do you think post conveys.</p></td>
+              <td width="30%" style="text-align: center;"><p>The woman's words were accompanied by endless laughter.</p></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex04_laughing_00123.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex04_laughing_00123.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex04_laughing_00123.wav" type="audio/wav"></audio></td>
               <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex04_laughing_00123.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/diffprompt/ex04_laughing_00123.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex04_laughing_00123.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/promptldm/ex04_laughing_00123.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td width="30%" style="text-align: center;"><p>Rough night at the casino tables?</p></td>
+              <td width="30%" style="text-align: center;"><p>His words flowed with a distinct and unerring precision.</p></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex01_enunciated_00066.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex01_enunciated_00066.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex01_enunciated_00066.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex01_enunciated_00066.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex01_enunciated_00066.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/promptldm/ex01_enunciated_00066.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td width="30%" style="text-align: center;"><p>"Anyway, this woman documented every single step of this process."</p></td>
+              <td width="30%" style="text-align: center;"><p>"In high spirits, the man shared his excitement."</p></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex01_happy_00180.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex01_happy_00180.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex01_happy_00180.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex01_happy_00180.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex01_happy_00180.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/promptldm/ex01_happy_00180.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td width="30%" style="text-align: center;"><p>Inez?</p></td>
+              <td width="30%" style="text-align: center;"><p>The man's tone was imbued with puzzlement.</p></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex03_confused_00358.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex03_confused_00358.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex03_confused_00358.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex03_confused_00358.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex03_confused_00358.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/promptldm/ex03_confused_00358.wav" type="audio/wav"></audio></td>
+            </tr>
+            <tr>
+              <td width="30%" style="text-align: center;"><p>"Any cramping, any discomfort or pain?"</p></td>
+              <td width="30%" style="text-align: center;"><p>The man's words was filled with whispered words.</p></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/gt/ex03_whisper_00364.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/prompttts/ex03_whisper_00364.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M1/ex03_whisper_00364.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex03_whisper_00364.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/M2/ex03_whisper_00364.wav" type="audio/wav"></audio></td>
+              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/expresso/promptldm/ex03_whisper_00364.wav" type="audio/wav"></audio></td>
             </tr>
           </tbody>
         </table>
@@ -171,78 +205,10 @@
 </section>
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">2. LibriTTS Samples</h2>
-        <div class="content">
-          <p>
-          </p>
-        </div>
-        <table class="table" style="background-color: transparent;">
-          <thead>
-            <tr>
-              <th align="center"><strong>Content Prompt</strong></th>
-              <th align="center"><strong>Style Prompt</strong></th>
-              <th align="center"><strong>GT</strong></th>
-              <th align="center"><strong>PromptTTS</strong></th>
-              <th align="center"><strong>M1</strong></th>
-              <th align="center"><strong>M2</strong></th>
-              <th align="center"><strong>DiffPrompt</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td width="25%" style="text-align: center;"><p>I don't believe you.</p></td>
-              <td width="25%" style="text-align: center;"><p>Her voice was fast and low</p></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/gt/1401_174511_000037_000000.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/prompttts/1401_174511_000037_000000.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M1/1401_174511_000037_000000.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M2/1401_174511_000037_000000.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/diffprompt/1401_174511_000037_000000.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-              <td width="25%" style="text-align: center;"><p>He complains very bitterly of this at a dinner-party, but his respect for Goethe has not diminished through this personal experience.</p></td>
-              <td width="25%" style="text-align: center;"><p>Please say a word with a very loud and mannish voice to say a word quickly </p></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/gt/1413_121799_000031_000002.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/prompttts/1413_121799_000031_000002.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M1/1413_121799_000031_000002.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M2/1413_121799_000031_000002.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/diffprompt/1413_121799_000031_000002.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-              <td width="25%" style="text-align: center;"><p>It was not far off, only a hundred yards to the right at the top of the hill.</p></td>
-              <td width="25%" style="text-align: center;"><p>High tone, fast language, normal volume, female </p></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/gt/1463_134463_000076_000004.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/prompttts/1463_134463_000076_000004.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M1/1463_134463_000076_000004.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M2/1463_134463_000076_000004.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/diffprompt/1463_134463_000076_000004.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-              <td width="25%" style="text-align: center;"><p>But let me ask a prior question: You admit that there are differences of arts?</p></td>
-              <td width="25%" style="text-align: center;"><p>A man talking slowly, but the sound is high</p></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/gt/1513_140222_000098_000001.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/prompttts/1513_140222_000098_000001.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M1/1513_140222_000098_000001.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M2/1513_140222_000098_000001.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/diffprompt/1513_140222_000098_000001.wav" type="audio/wav"></audio></td>
-            </tr>
-            <tr>
-              <td width="25%" style="text-align: center;"><p>Yea, this ego, with its contradiction and perplexity, speaketh most uprightly of its being--this creating, willing, evaluing ego, which is the measure and value of things.</p></td>
-              <td width="25%" style="text-align: center;"><p>Please use a slow tone speed and lower volume to say a man</p></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/gt/1392_128226_000022_000000.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/prompttts/1392_128226_000022_000000.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M1/1392_128226_000022_000000.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/M2/1392_128226_000022_000000.wav" type="audio/wav"></audio></td>
-              <td width="10%" style="text-align: center;"><audio controls="" ><source src="static/audio_sample/LibriTTS/diffprompt/1392_128226_000022_000000.wav" type="audio/wav"></audio></td>
-            </tr>
-          </tbody>
-        </table>
-
-
-
         <section class="hero is-light is-small">
           <div class="hero-body">
             <div class="container">
@@ -288,101 +254,7 @@ In this section, we comprehensively compare the influence of each stylistic fact
                 </div>
 
               </div>
-              
-              <div class="columns is-centered has-text-justified">
-                <div class="column">
-                  <h2 class="title is-5">(2) Pitch</h2>
-                </div>
-              </div>
-              <div class="content has-text-justified">
-                  <p> Pitch-1: A naughty boy is <strong>high-keyed</strong>: I must put on a few ornaments now, because it is expected of me.</p>
-                  <p> Pitch-2: He speaks: I must put on a few ornaments now, because it is expected of me.</p>
-                  <p> Pitch-3: He speaks in <strong>bass</strong>: I must put on a few ornaments now, because it is expected of me.</p>
-              </div>
 
-              <div class="columns">
-                <div class="column">
-                  <p>PromptTTS:</p>
-                  <p></p><p></p>
-                  <p>
-                    <audio controls ><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000002][3][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000003][4][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000004][5][P].wav" type="audio/wav"></audio>
-                  </p>
-                </div>
-                <div class="column">
-                  <p>DiffPrompt:</p>
-                  <p></p><p></p>
-                  <p>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000002][3][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000003][4][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000004][5][P].wav" type="audio/wav"></audio>
-                  </p>
-                </div>
-              </div>
-
-              <div class="columns is-centered has-text-justified">
-                <div class="column">
-                  <h2 class="title is-5">(3) Speaking Speed</h2>
-                </div>
-              </div>
-              <div class="content has-text-justified">
-                  <p> Speaking Speed-1: I want to hear that girl talk <strong>slowly</strong>: Tom, the piper's son.</p>
-                  <p> Speaking Speed-2: I want to hear that girl talk <strong>normally</strong>: Tom, the piper's son.</p>
-                  <p> Speaking Speed-3: I want to hear that girl talk <strong>quickly</strong>: Tom, the piper's son.</p>
-              </div>
-              
-              <div class="columns">
-                <div class="column">
-                  <p>PromptTTS:</p>
-                  <p></p><p></p>
-                  <p>
-                    <audio controls ><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000005][6][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000006][7][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000007][8][P].wav" type="audio/wav"></audio>
-                  </p>
-                </div>
-                <div class="column">
-                  <p>DiffPrompt:</p>
-                  <p></p><p></p>
-                  <p>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000005][6][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000006][7][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000007][8][P].wav" type="audio/wav"></audio>
-                  </p>
-                </div>
-              </div>
-              <div class="columns is-centered has-text-justified">
-                <div class="column">
-                  <h2 class="title is-5">(4) Volume</h2>
-                </div>
-              </div>
-              <div class="content has-text-justified">
-                  <p> Volume-1: Women <strong>whispered</strong> words: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</p>
-                  <p> Volume-2: A woman says: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways..</p>
-                  <p> Volume-3: Please say a woman <strong>loudly</strong>: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</p>
-              </div>
-
-              <div class="columns">
-                <div class="column">
-                  <p>PromptTTS:</p>
-                  <p></p><p></p>
-                  <p>
-                    <audio controls ><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000008][9][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000009][10][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000010][11][P].wav" type="audio/wav"></audio>
-                  </p>
-                </div>
-                <div class="column">
-                  <p>DiffPrompt:</p>
-                  <p></p><p></p>
-                  <p>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000008][9][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000009][10][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000010][11][P].wav" type="audio/wav"></audio>
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -390,7 +262,7 @@ In this section, we comprehensively compare the influence of each stylistic fact
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 
