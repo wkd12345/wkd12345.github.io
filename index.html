@@ -33,6 +33,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -88,6 +89,155 @@
 
   </div>
 </section>
+
+
+<!-- 饼状图部分 -->
+<style>
+  .chart-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 20px; /* 图与下方内容间隔 */
+  }
+  /* 设置容器的大小 */
+  .canvas-container {
+    width: 300px; /* 设置容器宽度 */
+    height: 300px; /* 设置容器高度 */
+  }
+  #myPieChart {
+    width: 100% !important; /* 使 canvas 宽度占满容器 */
+    height: 100% !important; /* 使 canvas 高度占满容器 */
+  }
+  .image-container {
+    display: flex; /* 使用 flexbox 使图片居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    margin-left: 20px; /* 图与饼状图间隔 */
+  }
+  .image-container img {
+    max-width: 60%; /* 限制图片宽度 */
+    max-height: 60%; /* 限制图片高度 */
+    border: none; /* 去除边框 */
+  }
+  .table-container {
+    margin-right: 100px; /* 表格与饼状图间隔 */
+  }
+  table {
+    border-collapse: collapse;
+    width: 250px; /* 设置表格宽度 */
+  }
+  .small-padding th, .small-padding td {
+    border: 1px solid #ccc; /* 表格边框 */
+    padding: 4px; /* 缩小内边距 */
+    text-align: left; /* 左对齐 */
+    font-size: 12px; /* 调整字体大小 */
+</style>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Details of the Dataset</h2>
+        <p style="text-align: left;">
+          We use the Expresso dataset to evaluate the performance of our proposed PromptLDM. 
+          The dataset contains 4 speakers (2 males and 2 females) and 8 styles, including confused, default, enunciated, happy, laughing, narration, sad, and whisper. The following table and pie chart show the distribution of the styles in the dataset:
+        </p>
+        
+
+        <div class="chart-container">
+          <div class="table-container">
+            <table class="small-padding">
+              <thead>
+                <tr>
+                  <th>Style</th>
+                  <th>Count (min)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>confused</td><td>94</td></tr>
+                <tr><td>default</td><td>133</td></tr>
+                <tr><td>enunciated</td><td>116</td></tr>
+                <tr><td>happy</td><td>74</td></tr>
+                <tr><td>laughing</td><td>94</td></tr>
+                <tr><td>narration</td><td>21</td></tr>
+                <tr><td>sad</td><td>81</td></tr>
+                <tr><td>whisper</td><td>79</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="canvas-container">
+            <canvas id="myPieChart"></canvas>
+          </div>
+        </div>
+
+        <p style="text-align: left;">
+          We use natural language description as style prompts according to the style categories.
+          Specifically, we utilize LLM to assist in generating more diverse style prompts based on the provided text prompt examples. The following diagram illustrates this process:
+        </p> <br>
+        <div class="columns">
+          <div class="column">
+            <div class="image-container">
+              <img src="static/images/data.jpg" alt="Description of image">
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const ctx = document.getElementById('myPieChart').getContext('2d');
+  const myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['confused', 'default', 'enunciated', 'happy', 'laughing', 'narration', 'sad', 'whisper'],
+      datasets: [{
+        label: 'Distribution',
+        data: [94, 133, 116, 74, 94, 21, 81, 79], // 数据对应各个因素的比例
+        backgroundColor: [
+        'rgba(255, 99, 132, 0.6)', // 红色
+        'rgba(54, 162, 235, 0.6)', // 蓝色
+        'rgba(255, 206, 86, 0.6)', // 黄色
+        'rgba(75, 192, 192, 0.6)', // 青色
+        'rgba(255, 159, 64, 0.6)', // 橙色
+        'rgba(153, 102, 255, 0.6)', // 紫色
+        'rgba(201, 203, 207, 0.6)', // 灰色
+        'rgba(255, 99, 71, 0.6)'   // 番茄红
+        ],
+        borderColor: [
+        'rgba(255, 99, 132, 1)', // 红色
+        'rgba(54, 162, 235, 1)', // 蓝色
+        'rgba(255, 206, 86, 1)', // 黄色
+        'rgba(75, 192, 192, 1)', // 青色
+        'rgba(255, 159, 64, 1)', // 橙色
+        'rgba(153, 102, 255, 1)', // 紫色
+        'rgba(201, 203, 207, 1)', // 灰色
+        'rgba(255, 99, 71, 1)'    // 番茄红 
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false, // 允许调整比例
+      plugins: {
+        legend: {
+          position: 'right',
+        },
+        title: {
+          position: 'bottom',
+          display: true,
+          text: 'Style distribution',
+
+        }
+      }
+    },
+  });
+</script>
+
+
+
 
 
 <section class="hero is-light is-small">
@@ -262,7 +412,7 @@ In this section, we comprehensively compare the influence of each stylistic fact
       </div>
     </div>
   </div>
-</section> -->
+</section>  -->
 
 
 
