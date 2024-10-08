@@ -74,22 +74,31 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Model Architecture</h2> 
         <div class="content has-text-justified">
-          <p>
-          </p>
-          <p>
-            Although current speech synthesis systems are capable of synthesizing high-fidelity speech, it remains challenging to generate speech with desired styles. In this paper, we propose PromptLDM, a novel controllable Text-to-Speech (TTS) system with latent diffusion model, utilizing natural language descriptions as style prompts to guide the speech synthesis. Specifically, Considering the lack of acoustic details specific to audio prompt in text prompt representation, we introduce a latent diffusion model to establish an intermodal relationship between text and audio prompts. We optimize representations from different modalities through representation learning and fuse them to obtain a better style embedding. We use FastSpeech2 as the basic model and integrate the diffusion model to enhance its synthesis performance. Experiments indicate that our system can synthesize more natural speech with specific styles compared to the baseline.
-          </p>
-        </div>
 
+          <!-- <p>
+            Although current speech synthesis systems are capable of synthesizing high-fidelity speech, it remains challenging to generate speech with desired styles. In this paper, we propose PromptLDM, a novel controllable Text-to-Speech (TTS) system with latent diffusion model, utilizing natural language descriptions as style prompts to guide the speech synthesis. Specifically, Considering the lack of acoustic details specific to audio prompt in text prompt representation, we introduce a latent diffusion model to establish an intermodal relationship between text and audio prompts. We optimize representations from different modalities through representation learning and fuse them to obtain a better style embedding. We use FastSpeech2 as the basic model and integrate the diffusion model to enhance its synthesis performance. Experiments indicate that our system can synthesize more natural speech with specific styles compared to the baseline.
+          </p> -->
+          <p>
+            Referring to <strong>IST-TTS</strong><sup>1</sup>, we combine VAE and diffusion to obtain more refined Mel-spectrograms. During inference, in the Style Embedding Extractor, we utilize LDM to acquire representations from both modalities and perform feature learning to obtain style embeddings, enabling precise control over speech styles.</figcaption>
+          </p>
+          <p>
+            <!-- 图片插入在这里 -->
+            <figure class="image is-centered">
+              <img src="static/images/models.jpg" alt="Diagram representing PromptLDM model" style="width: 50%; height: auto;">
+              <figcaption>Figure 1: The overall architecture of PromptLDM.
+              <img src="static/images/models2.jpg" alt="Diagram representing PromptLDM model">
+              <figcaption>Figure 2: An illustration of the Style Embedding Extractor.
+            </figure>
+          </p> 
+
+        </div>
       </div>
     </div>
     <!--/ Abstract. -->
-
   </div>
 </section>
-
 
 <!-- 饼状图部分 -->
 <style>
@@ -355,66 +364,32 @@
 </section>
 
 
-<!-- <section class="hero is-light is-small">
+<section class="section" style="padding-top: 0px;"></section>
   <div class="container is-max-desktop">
+    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <section class="hero is-light is-small">
-          <div class="hero-body">
-            <div class="container">
-              <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                  <h2 class="title is-4">
-                    Comparison of Different Factors</h2>
-                  <div class="content has-text-justified">
-                    <p>
-                      
-In this section, we comprehensively compare the influence of each stylistic factor (gender, pitch, speaking speed, and volume) in LibriTTS on the synthesized speech.
-                    </p>
-                  </div>
-                </div>
-              </div>
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
 
-              <div class="columns is-centered has-text-justified">
-                <div class="column">
-                  <h2 class="title is-5">(1) Gender</h2>
-                </div>
-              </div>
-              <div class="content has-text-justified">
-                  <p> Gender-1: Provide me with a <strong>male</strong> voice: Go hungry, replied Barney, unless you want to take my pipes and play in the village.</p>
-                  <p> Gender-2: Provide me with a <strong>female</strong> voice: Go hungry, replied Barney, unless you want to take my pipes and play in the village.</p>
-              </div>
-              
-              <div class="columns">
-                <div class="column">
-                  <p>PromptTTS:</p>
-                  <p></p><p></p>
-                  <p>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000000][1][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/prompttts/[000001][2][P].wav" type="audio/wav"></audio>
-                  </p>
-                </div>
-                <div class="column">
-                  <p>DiffPrompt:</p>
-                  <p></p><p></p>
-                  <p>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000000][1][P].wav" type="audio/wav"></audio>
-                    <audio controls=""><source src="static/audio_sample/LibriTTS/comparison/diffprompt/[000001][2][P].wav" type="audio/wav"></audio>
-                  </p>
-                </div>
+        <p>
+            <strong>Reference</strong>
+            <ol>
+              <li>
+                Wenhao Guan, Tao Li, Yishuang Li, Hukai Huang, Qingyang Hong,
+                  and Lin Li, “Interpretable Style Transfer for Text-to-Speech with
+                  ControlVAE and Diffusion Bridge” in Proc. INTERSPEECH 2023,
+                  2023, pp. 4304–4308.
+              </li>
+            </ol>
+          </p>
 
-              </div>
-
-            </div>
-          </div>
-        </section>
-        
+        </div>
+          </div>  
+        </div>
       </div>
     </div>
   </div>
-</section>  -->
-
-
+</section>
 
 <footer class="footer">
   <div class="container">
